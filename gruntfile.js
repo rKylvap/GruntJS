@@ -56,9 +56,9 @@ module.exports = function(grunt){
 
         concat: {
             target1:{
-                //options: {
-                //    separator: ';'
-                //},
+                options: {
+                    separator: ';'
+                },
                 files: {
                     '<%= destFile %>':  '<%= srcFiles %>'
                 }
@@ -67,6 +67,18 @@ module.exports = function(grunt){
 
        uglify: {
            compress: {
+               options: {
+                   mangle: {
+                       toplevel: true,
+                       eval: true,
+                       sort: true,
+                       props: true
+                   },
+                   compress: {
+                       join_vars: true,
+                       unsafe: true
+                   }
+               },
                files: [{
                    expand: true,
                    cwd: '<%= build.dir %>',
