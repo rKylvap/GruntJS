@@ -173,4 +173,9 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.registerTask('default', ['clean', 'concat', 'uglify', 'watch']);
+
+
+    //external tasks
+
+    grunt.loadTasks('./grunt-gswg/tasks');
 };
