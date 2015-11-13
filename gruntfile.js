@@ -1,7 +1,14 @@
 var fs = require('fs'),
-    request = require('request');
+    request = require('request'),
+    _tasksOptions = {
+        pattern: 'grunt-contrib-*',
+        config: './package.json',
+        scope: 'devDependencies'
+    };
 
 module.exports = function(grunt){
+    require('load-grunt-tasks')(grunt, _tasksOptions);
+
     //Config
 
    grunt.initConfig({
@@ -157,8 +164,6 @@ module.exports = function(grunt){
 
     //Programmatically run task
 
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-
     grunt.registerTask('check', function(){
         if(grunt.file.exists('.jshintrc')){
             grunt.task.run('jshint');
@@ -166,11 +171,6 @@ module.exports = function(grunt){
     });
 
     //Automatically
-
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.registerTask('default', ['clean', 'concat', 'uglify', 'watch']);
 
