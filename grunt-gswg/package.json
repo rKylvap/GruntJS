@@ -1,0 +1,15 @@
+{
+  "name": "grunt-gswg",
+  "version": "0.1.0",
+  "peerDependencies": {
+    "grunt": "^0.4.5"
+  },
+  "keywords": [
+    "gruntplugin",
+    "example",
+    "sample",
+    "gswg"
+  ],
+  "author": "Rogi Kylvap <rogi.kylvap@gmail.com>",
+  "license": "MIT"
+}
