@@ -84,7 +84,8 @@ module.exports = function(grunt){
                    compress: {
                        join_vars: true,
                        unsafe: true
-                   }
+                   },
+                   wrap: true
                },
                files: [{
                    expand: true,
